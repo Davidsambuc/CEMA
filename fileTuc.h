@@ -5,6 +5,7 @@
 #ifndef UNTITLED_FILETUC_H
 #define UNTITLED_FILETUC_H
 #define TAILLE_MAX_FTUC 100
+#include <stdbool.h>
 
 struct fileTuc {
     int premier;//indice du premier
@@ -12,20 +13,12 @@ struct fileTuc {
     unsigned char valeurs[TAILLE_MAX_FTUC];
 };    //file vide : premier = dernier
 
-void enfiler(struct fileTuc *f, unsigned char val) {
-    f->valeurs[f->dernier++] = val;
-    if (f->dernier == TAILLE_MAX){
-        f->dernier = 0;
-    }
-}
-
-char defiler(struct fileTuc *f) {
-    char v = f->valeurs[f->premier++];
-    if (f->premier == TAILLE_MAX) {
-        f->premier = 0;
-    }
-    return v;
-}
+struct fileTuc * ftuc_creer(void);
+void ftuc_liberer(struct fileTuc *);
+bool ftuc_isfull(struct fileTuc *);
+bool ftuc_estVide(struct fileTuc *);
+void ftuc_enfiler(struct fileTuc *, unsigned char);
+unsigned char ftuc_defiler(struct fileTuc *);
 
 
 

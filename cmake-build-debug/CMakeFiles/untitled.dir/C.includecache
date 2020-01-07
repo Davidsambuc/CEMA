@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/pandav/CLionProjects/AlgoEMA/fileTuc.h
+stdbool.h
+-
+
 /home/pandav/CLionProjects/AlgoEMA/main.c
 stdio.h
 -
 pileTuc.h
 /home/pandav/CLionProjects/AlgoEMA/pileTuc.h
+fileTuc.h
+/home/pandav/CLionProjects/AlgoEMA/fileTuc.h
 
 /home/pandav/CLionProjects/AlgoEMA/pileTuc.h
 stdbool.h
