@@ -18,7 +18,7 @@ void putc_liberer(struct pileTuc * p) {
 void ptuc_empiler(struct pileTuc * p, unsigned char val){
     p->valeurs[p->s++] = val;
 }
-char ptuc_depiler(struct pileTuc * p){
+unsigned char ptuc_depiler(struct pileTuc * p){
     return p->valeurs[--p->s];
 }
 bool putc_estVide(struct pileTuc * p){

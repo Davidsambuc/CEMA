@@ -35,7 +35,7 @@ void ftuc_enfiler(struct fileTuc *f, unsigned char val) {
 
 unsigned char ftuc_defiler(struct fileTuc *f){
     if(!ftuc_estVide(f)) {
-        char v = f->valeurs[f->premier++];
+        unsigned char v = f->valeurs[f->premier++];
         if (f->premier == TAILLE_MAX_FTUC) {
             f->premier = 0;
         }

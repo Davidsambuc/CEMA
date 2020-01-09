@@ -15,7 +15,7 @@ struct pileTuc {
 struct pileTuc * ptuc_creer(void);
 void putc_liberer(struct pileTuc *);
 void ptuc_empiler(struct pileTuc *, unsigned char);
-char ptuc_depiler(struct pileTuc *);
+unsigned char ptuc_depiler(struct pileTuc *);
 bool putc_estVide(struct pileTuc *);
 unsigned char ptuc_sommet(struct pileTuc *);
 
