@@ -3,31 +3,36 @@
 #include "pileTuc.c"
 #include "fileTuc.c"
 
-int resolve(struct fileTuc * f){
+struct fileTuc * translate(char * expression) {
+    struct fileTuc * f = ftuc_creer();
+    struct pileTuc * p = ptuc_creer();
+    int i = 0;
+    while(expression[i] != '\0') {
+        //if(expression[i] )
+        i++;
+    }
+}
+
+
+int evaluate(struct fileTuc * f){
     struct pileTuc * p = ptuc_creer();
     while (!ftuc_estVide(f)) {
-        unsigned char first = ftuc_defiler(f);
-        printf("%c\n", first);
-        if(first == '+' || first == '*') {
-            unsigned char first_operand = ptuc_depiler(p);
-            unsigned char second_operand = ptuc_depiler(p);
-            int firstint_operand = first_operand - '0';
-            int secondint_operand = second_operand - '0';
-            printf("%i%i\n", firstint_operand, secondint_operand);
-            int res;
-            if(first == '+') {
-                res = firstint_operand + secondint_operand;
-            } else {
-                res = firstint_operand * secondint_operand;
+        int first = ftuc_defiler(f);
+        if(first < 0) {
+            int first_operand = ptuc_depiler(p);
+            int second_operand = ptuc_depiler(p);
+            int res = 0;
+            if(first == -1) {
+                res = first_operand + second_operand;
+            } else if (first == -2){
+                res = first_operand * second_operand;
             }
-            printf("%i\n", res);
-            unsigned char char_res = (unsigned char)res;
-            ptuc_empiler(p,char_res);
+            ptuc_empiler(p,res);
         } else {
             ptuc_empiler(p, first);
         }
     }
-    unsigned char res = ptuc_depiler(p);
+    int res = ptuc_depiler(p);
     return res;
 }
 
@@ -71,15 +76,23 @@ int main(int argc, const char* argv[]) {
     printf("%c\n",res);*/
 
     struct fileTuc * f = ftuc_creer();
-    ftuc_enfiler(f,'1');
-    ftuc_enfiler(f,'1');
-    ftuc_enfiler(f,'+');
+    ftuc_enfiler(f,1);
+    ftuc_enfiler(f,2);
+    ftuc_enfiler(f,3);
+    ftuc_enfiler(f,4);
+    ftuc_enfiler(f,5);
+    ftuc_enfiler(f,-2);
+    ftuc_enfiler(f,-2);
+    ftuc_enfiler(f,6);
+    ftuc_enfiler(f,7);
+    ftuc_enfiler(f,-2);
+    ftuc_enfiler(f,-1);
+    ftuc_enfiler(f,-2);
     /*while(!ftuc_estVide(f)) {
         unsigned char print = ftuc_defiler(f);
         printf("%c\n",print);
     }*/
-    unsigned char res = resolve(f);
-    printf("%c\n", res);
-
+    unsigned int res = evaluate(f);
+    printf("%i\n", res);
     return 0;
 }

@@ -9,14 +9,14 @@
 #include <stdbool.h>
 struct pileTuc {
     int s; //indice du sommet + 1
-    unsigned char valeurs[TAILLE_MAX_PTUC];
+    int valeurs[TAILLE_MAX_PTUC];
 };    //pile vide s=0
 
 struct pileTuc * ptuc_creer(void);
 void putc_liberer(struct pileTuc *);
-void ptuc_empiler(struct pileTuc *, unsigned char);
-unsigned char ptuc_depiler(struct pileTuc *);
+void ptuc_empiler(struct pileTuc *, int);
+int ptuc_depiler(struct pileTuc *);
 bool putc_estVide(struct pileTuc *);
-unsigned char ptuc_sommet(struct pileTuc *);
+int ptuc_sommet(struct pileTuc *);
 
 #endif //PILETUC_H

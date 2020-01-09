@@ -24,7 +24,7 @@ bool ftuc_isfull(struct fileTuc *f){
     return ((f->premier - 2 == f->dernier)||(f->dernier + 1 == TAILLE_MAX_FTUC && f->premier < 2)||(f->dernier + 2 == TAILLE_MAX_FTUC && f->premier < 1 ));
 }
 
-void ftuc_enfiler(struct fileTuc *f, unsigned char val) {
+void ftuc_enfiler(struct fileTuc *f, int val) {
     if(!ftuc_isfull(f)) {
         f->valeurs[f->dernier++] = val;
         if (f->dernier == TAILLE_MAX_FTUC){
@@ -33,9 +33,9 @@ void ftuc_enfiler(struct fileTuc *f, unsigned char val) {
     }
 }
 
-unsigned char ftuc_defiler(struct fileTuc *f){
+int ftuc_defiler(struct fileTuc *f){
     if(!ftuc_estVide(f)) {
-        unsigned char v = f->valeurs[f->premier++];
+        unsigned int v = f->valeurs[f->premier++];
         if (f->premier == TAILLE_MAX_FTUC) {
             f->premier = 0;
         }

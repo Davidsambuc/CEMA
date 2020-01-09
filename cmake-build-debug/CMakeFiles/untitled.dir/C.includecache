@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/pandav/CLionProjects/AlgoEMA/fileTuc.c
+stdio.h
+-
+stdlib.h
+-
+fileTuc.h
+/home/pandav/CLionProjects/AlgoEMA/fileTuc.h
+
 /home/pandav/CLionProjects/AlgoEMA/fileTuc.h
 stdbool.h
 -
@@ -13,10 +21,20 @@ stdbool.h
 /home/pandav/CLionProjects/AlgoEMA/main.c
 stdio.h
 -
+stdlib.h
+-
+pileTuc.c
+/home/pandav/CLionProjects/AlgoEMA/pileTuc.c
+fileTuc.c
+/home/pandav/CLionProjects/AlgoEMA/fileTuc.c
+
+/home/pandav/CLionProjects/AlgoEMA/pileTuc.c
+stdio.h
+-
+stdlib.h
+-
 pileTuc.h
 /home/pandav/CLionProjects/AlgoEMA/pileTuc.h
-fileTuc.h
-/home/pandav/CLionProjects/AlgoEMA/fileTuc.h
 
 /home/pandav/CLionProjects/AlgoEMA/pileTuc.h
 stdbool.h

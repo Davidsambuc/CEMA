@@ -15,15 +15,15 @@ void putc_liberer(struct pileTuc * p) {
     free(p);
 }
 
-void ptuc_empiler(struct pileTuc * p, unsigned char val){
+void ptuc_empiler(struct pileTuc * p, int val){
     p->valeurs[p->s++] = val;
 }
-unsigned char ptuc_depiler(struct pileTuc * p){
+int ptuc_depiler(struct pileTuc * p){
     return p->valeurs[--p->s];
 }
 bool putc_estVide(struct pileTuc * p){
     return p->s == 0;
 }
-unsigned char ptuc_sommet(struct pileTuc *p) {
+int ptuc_sommet(struct pileTuc *p) {
     return p->valeurs[p->s-1];
 }
