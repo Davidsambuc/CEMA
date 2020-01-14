@@ -19,6 +19,8 @@ bool ftuc_isfull(struct fileTuc *);
 bool ftuc_estVide(struct fileTuc *);
 void ftuc_enfiler(struct fileTuc *, int);
 int ftuc_defiler(struct fileTuc *);
+int ftuc_getFirst(struct fileTuc *);
+int ftuc_getLast(struct fileTuc *);
 
 
 

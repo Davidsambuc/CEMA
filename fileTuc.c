@@ -35,12 +35,20 @@ void ftuc_enfiler(struct fileTuc *f, int val) {
 
 int ftuc_defiler(struct fileTuc *f){
     if(!ftuc_estVide(f)) {
-        unsigned int v = f->valeurs[f->premier++];
+        int v = f->valeurs[f->premier++];
         if (f->premier == TAILLE_MAX_FTUC) {
             f->premier = 0;
         }
         return v;
     } else {
-        exit;
+        return -666;
     }
+}
+
+int ftuc_getFirst(struct fileTuc * f) {
+    return f->valeurs[f->premier];
+}
+
+int ftuc_getLast(struct fileTuc * f) {
+    return f->valeurs[f->dernier];
 }
